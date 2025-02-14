@@ -1,10 +1,23 @@
-var SRRM130 = new ol.layer.Tile({
-    name: 'SRRM130', 
-    title: "SRRM130",
-    visible: true,
-    opacity: 1,
-    baseLayer: false,
-    source: new ol.source.XYZ({
-        url: 'https://Chapui88.github.io/webmap_rheinbach_test/tiles/{z}/{x}/{y}.png'
-    })
-});
+{% extends "base.html" %}
+
+{% block title %}Home - My Flask App{% endblock %}
+
+{% block content %}
+<!--<h2>Welcome to the Homepage</h2> -->
+<!--<p>This is the main page content.</p> -->
+
+<!-- Map Section -->
+
+
+
+<div id="map-container">
+    <div id="loading-spinner" class="spinner"></div>
+    <div id="map"></div>
+</div>
+
+
+    <!-- Link to external JavaScript file -->
+  <script src="{{ url_for('static', filename='js/create_layer.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+    
+{% endblock %}
