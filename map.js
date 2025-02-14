@@ -121,6 +121,16 @@ var SRRM000 = new ol.layer.Tile({
 });
 
 
+var githubTiles = new ol.layer.Tile({
+    title: 'Meine XYZ-Tiles',
+    source: new ol.source.XYZ({
+        url: 'https://chapui88.github.io/webmap_rheinbach_test/tiles/{z}/{x}/{y}.png',
+        projection: 'EPSG:25832',
+        tileSize: 256
+    })
+});
+
+
 const view = new ol.View({
                   projection: projectionName,
                   center: center_start,
@@ -136,7 +146,7 @@ const view = new ol.View({
 
  
 // Add Layers to array              
-var layers = [DTK25, ORTHO, SRRM130] 
+var layers = [DTK25, ORTHO, SRRM130, githubTiles] 
 
 
 // Initialize the map
