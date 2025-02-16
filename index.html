@@ -35,7 +35,7 @@
     proj4.defs(projectionName, '+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs');
                 
 
-
+   var control = new ol.control.FullScreen();
    var projection25832 = new ol.proj.Projection({
                                                    code: 'EPSG:25832',
                                                        // The extent is used to determine zoom level 0. Recommended values for a
