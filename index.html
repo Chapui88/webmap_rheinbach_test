@@ -55,11 +55,13 @@
             layers: [
                 new ol.layer.Tile({
                     source: new ol.source.XYZ({
-                        url: 'https://Chapui88.github.io/webmap_rheinbach_test/tiles/12/2126/1377.png'
+                        url: 'https://Chapui88.github.io/webmap_rheinbach_test/tiles/{z}/{x}/{y}.png'
                     })
                 })
             ],
             view: new ol.View({
+                //               var center_start =  [354754,5610100]
+
                 center: ol.proj.fromLonLat([10, 50]),  // Deutschland-Mitte
                 zoom: 12
             })
