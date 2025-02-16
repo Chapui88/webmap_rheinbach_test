@@ -61,9 +61,12 @@
             ],
             view: new ol.View({
                 //               var center_start =  [354754,5610100]
-
+                
                 center: ol.proj.fromLonLat([10, 50]),  // Deutschland-Mitte
-                zoom: 12
+                zoom: 12,
+                maxZoom: 20,
+                minZoom: 12.25,
+                
             })
         });
     </script>
