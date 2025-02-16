@@ -30,23 +30,50 @@
     <div id="map"></div>
 
     <script>
-        var map = new ol.Map({
-            target: 'map',
-            layers: [
-                new ol.layer.Tile({
-                    source: new ol.source.XYZ({
-                        url: 'https://Chapui88.github.io/webmap_rheinbach_test/tiles/{z}/{x}/{y}.png'
-                    })
-                })
-            ],
-            view: new ol.View({
-                //               var center_start =  [354754,5610100]
+
+    var projectionName = 'EPSG:25832';
+    proj4.defs(projectionName, '+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs');
                 
-                center: ol.proj.fromLonLat([10, 50]),  // Deutschland-Mitte
-                zoom: 12,
-                
+
+
+   var projection25832 = new ol.proj.Projection({
+                                                   code: 'EPSG:25832',
+                                                       // The extent is used to determine zoom level 0. Recommended values for a
+                                                       // projection's validity extent can be found at https://epsg.io/.
+                                                   extent: [-1877994.66, 3932281.56, 1836715.13, 9440581.95],
+                                                   units: 'm'
+                                                   }); 
+        new XYZ = new ol.layer.Tile({
+            source: new ol.source.XYZ({
+                url: 'https://Chapui88.github.io/webmap_rheinbach_test/tiles/{z}/{x}/{y}.png'
             })
         });
+
+
+   var layers = [XYZ];
+
+        
+   var center_start =  [354754,5610100];
+   var zoom_start = 12;
+    
+
+const view = new ol.View({
+                  projection: projectionName,
+                  center: center_start,
+                  zoom: zoom_start,
+                  maxZoom: 20,
+                  minZoom: 10,
+                });
+        
+    var map = new ol.Map({
+    target: 'map',
+    controls: [control],
+    layers: layers,
+    view: view,
+    });
+
+        
+
     </script>
 </body>
 </html>
