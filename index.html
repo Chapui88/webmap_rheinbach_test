@@ -84,7 +84,7 @@ var coordDisplay = document.getElementById('coords');
 // MouseMove-Event, um die Koordinaten anzuzeigen
 map.on('pointermove', function(event) {
     var coord = ol.proj.toLonLat(event.coordinate);  // In EPSG:4326 umrechnen
-    var coord = ol.proj.transform(event.coordinate, 'EPSG:3857', 'EPSG:25832');
+    var coord = ol.proj.transform(event.coordinate, 'EPSG:25832');
     var lon = coord[0].toFixed(5);  // Längengrad mit 5 Nachkommastellen
     var lat = coord[1].toFixed(5);  // Breitengrad mit 5 Nachkommastellen
     coordDisplay.innerHTML = `Koordinaten: ${lon}, ${lat}`;
