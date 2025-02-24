@@ -56,10 +56,9 @@
 
  
 // 🗺 Basemap (OSM)           
-var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-});
-        
+   var basemap =  new ol.layer.Tile({
+            source: new ol.source.OSM()
+        }),
 
    var layers = [basemap];
 
