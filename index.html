@@ -51,10 +51,13 @@
     });
 
  
-
+// 🗺 Basemap (OSM)
+var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+});
         
 
-   var layers = [XYZ];
+   var layers = [XYZ, basemap];
 
         
    var center_start =  [354754,5610100];
